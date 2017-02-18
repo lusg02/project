@@ -2,3 +2,4 @@
 <br>
 2. [slide demo](https://lusg02.github.io/Exercises/slide/index.html)
 <br>
+3. [sidebarScrolling demo](https://lusg02.github.io/Exercises/Sidebar%20Rolling/index.html)
