@@ -15,14 +15,16 @@
    - 用到的知识点
 
      - SASS
+     
 
        1. 嵌套
-         2. $变量
-         3. @mixin 函数名(参数)
-         4. @import
-         5. @extend
+       2. $变量
+       3. @mixin 函数名(参数)
+       4. @import
+       5. @extend
 
      - RequireJs
+     
 
        1. requirejs.config
 
@@ -47,12 +49,14 @@
           ```
 
      - CSS3
+     
 
        1. transition
        2. transform
        3. transform-origin
 
      - jQuery
+     
 
        1. $.extend()
 
