@@ -3,3 +3,4 @@
 2. [slide demo](https://lusg02.github.io/Exercises/slide/index.html)
 <br>
 3. [sidebarScrolling demo](https://lusg02.github.io/Exercises/Sidebar%20Rolling/index.html)
+4. [resizeable demo](https://lusg-2.github.io/exercises/resizeable/index.html)
