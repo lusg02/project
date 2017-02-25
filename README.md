@@ -18,6 +18,7 @@
      
 
        1. 嵌套
+       
        2. $变量
        3. @mixin 函数名(参数)
        4. @import
@@ -35,6 +36,7 @@
             }
           });
           ```
+          
 
        2. requirejs
 
@@ -63,6 +65,7 @@
           ```javascript
           this.opts = $.extend({}, ScrollTo.DEFAULTS, opts);
           ```
+          
 
        2. $.proxy()
 
