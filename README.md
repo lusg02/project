@@ -15,57 +15,46 @@
    - 用到的知识点
 
      - SASS
-     
 
        1. 嵌套
-       
        2. $变量
        3. @mixin 函数名(参数)
        4. @import
        5. @extend
 
      - RequireJs
-     
 
        1. requirejs.config
 
           ```
-          requirejs.config({  
-            paths: {    
-             jquery: 'jquery-1.11.3.min'  
-            }
-          });
+          requirejs.config({  paths: {    jquery: 'jquery-1.11.3.min'  }});
           ```
-          
 
        2. requirejs
 
           ```
-          requirejs(['jquery', function ($) {}]);
+          requirejs(['jquery', function ($) {  }]);
           ```
 
        3. define
 
           ```
-          define(['jquery'], function ($) { return {}; })
+          define(['jquery'], function ($) {  return {      };})
           ```
 
      - CSS3
-     
 
        1. transition
        2. transform
        3. transform-origin
 
      - jQuery
-     
 
        1. $.extend()
 
           ```javascript
           this.opts = $.extend({}, ScrollTo.DEFAULTS, opts);
           ```
-          
 
        2. $.proxy()
 
@@ -86,3 +75,5 @@
             return this;
           })
           ```
+
+          ​
