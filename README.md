@@ -27,19 +27,23 @@
        1. requirejs.config
 
           ```
-          requirejs.config({  paths: {    jquery: 'jquery-1.11.3.min'  }});
+          requirejs.config({  
+            paths: {    
+             jquery: 'jquery-1.11.3.min'  
+            }
+          });
           ```
 
        2. requirejs
 
           ```
-          requirejs(['jquery', function ($) {  }]);
+          requirejs(['jquery', function ($) {}]);
           ```
 
        3. define
 
           ```
-          define(['jquery'], function ($) {  return {      };})
+          define(['jquery'], function ($) { return {}; })
           ```
 
      - CSS3
@@ -75,5 +79,3 @@
             return this;
           })
           ```
-
-          ​
