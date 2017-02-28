@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <title>必应搜索</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="bg-div">
+    <div class="search-box">
+        <div class="logo"></div>
+        <form class="search-form" action="https://cn.bing.com/search" target="_blank" id="search-form">
+            <input type="text" class="search-text" id="search-text" autocomplete="off">
+            <input type="submit" class="search-button" value="" id="search-button">
+        </form>
+    </div>
+</div>
+<div class="suggest" id="search-suggest" style="display: none;">
+    <ul id="search-result">
+        <li>搜索结果1</li>
+        <li>搜索结果2</li>
+        <li>搜索结果3</li>
+    </ul>
+</div>
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
