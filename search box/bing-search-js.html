@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <title>必应搜索</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="bg-div">
+    <div class="search-box">
+        <div class="logo"></div>
+        <form class="search-form" action="https://cn.bing.com/search" target="_blank" id="search-form">
+            <input type="text" class="search-text" id="search-text" autocomplete="off">
+            <input type="submit" class="search-button" value="" id="search-button">
+        </form>
+    </div>
+</div>
+<div class="suggest" id="search-suggest" style="display: none;">
+    <ul id="search-result">
+
+    </ul>
+</div>
+<script>
+
+    var g = function (id) {
+        return document.getElementById(id);
+    };
+
+    var addEvent = function (id, event, fn) {
+        var el = g(id) || document;
+        if (el.addEventListener) {
+            el.addEventListener(event, fn, false);
+        } else if (el.attachEvent) {
+            el.attachEvent('on' + event, fn);
+        }
+    };
+
+    var getElementLeft = function (el) {
+        var actualLeft = el.offsetLeft;
+        var current = el.offsetParent;
+
+        while (current !== null) {
+            actualLeft += current.offsetLeft;
+            current = current.offsetParent;
+        }
+
+        return actualLeft;
+    };
+
+    var getElementTop = function (el) {
+        var actualTop = el.offsetTop;
+        var current = el.offsetParent;
+
+        while (current !== null) {
+            actualTop += current.offsetTop;
+            current = current.offsetParent;
+        }
+
+        return actualTop;
+    };
+
+    var ajax = function (url, callback) {
+        var xhr = null;
+        if (window.XMLHttpRequest) {
+            xhr = new window.XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                callback(JSON.parse(xhr.responseText));
+            }
+        };
+
+        xhr.open('get', url, false);
+        xhr.send(null);
+    };
+    
+    var delegeteEvent = function (target, event, fn) {
+        addEvent(document, event, function (e) {
+            if (e.target.nodeName === target.toUpperCase()) {
+                fn.call(e.target);
+            }
+        });
+    };
+
+    addEvent('search-text', 'keyup', function () {
+        var suggest = g('search-suggest');
+        var searchText = g('search-text').value;
+
+        ajax('http://api.bing.com/qsonhs.aspx?q=' + searchText, function (d) {
+            var d = d.AS.Results[0].Suggests;
+            var html = '';
+            for (var i=0; i<d.length; i++) {
+                html += '<li>' + d[i].Txt + '</li>'
+            }
+
+            g('search-result').innerHTML = html;
+
+            suggest.style.top = getElementTop(g('search-form')) + 38 + 'px';
+            suggest.style.left = getElementLeft(g('search-form')) + 'px';
+            suggest.style.position = 'absolute';
+            suggest.style.display = 'block';
+        });
+
+    });
+
+    addEvent(document, 'click', function () {
+        g('search-suggest').style.display = 'none';
+    });
+
+    delegeteEvent('li', 'click', function () {
+        var keyword = this.innerHTML;
+        location.href = 'http://cn.bing.com/search?q=' + keyword;
+        
+    })
+
+</script>
+</body>
+</html>
