@@ -6,6 +6,6 @@
 
 3. [sidebarScrolling demo](https://lusg02.github.io/exercises/Sidebar%20Rolling/index.html)
 
-4. [resizeable demo](https://lusg-2.github.io/exercises/resizeable/index.html)
+4. [resizeable demo](https://lusg02.github.io/exercises/resizeable/index.html)
 
 5. [toolbar demo](https://lusg02.github.io/exercises/tollbar/index.html)
