@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>旋转木马幻灯片效果</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container j_poster"
+     data-settings='{ "width": 1000, "height": 270, "poster_w": 640, "poster_h": 270, "scale": 0.9, "speed": 500, "delay": 2000, "autoPlay": true}'>
+  <div class="poster-btn poster-prev-btn"></div>
+  <ul class="poster-list j_poster_list">
+    <li class="item"><a href="javascript:"><img src="images/1.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/2.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/3.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/4.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/5.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/2.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/3.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/4.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/5.jpg"></a></li>
+  </ul>
+  <div class="poster-btn poster-next-btn"></div>
+</div>
+
+<div class="container j_poster"
+     data-settings='{ "width": 1000, "height": 270, "poster_w": 640, "poster_h": 270, "scale": 0.9, "speed": 500, "delay": 500, "autoPlay": false}'>
+  <div class="poster-btn poster-prev-btn"></div>
+  <ul class="poster-list j_poster_list">
+    <li class="item"><a href="javascript:"><img src="images/1.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/2.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/3.jpg"></a></li>
+    <li class="item"><a href="javascript:"><img src="images/4.jpg"></a></li>
+  </ul>
+  <div class="poster-btn poster-next-btn"></div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+  $(function () {
+
+    // var carousel = new Carousel($('.j_poster').eq(0));
+    Carousel.init($('.j_poster'));
+
+  });
+</script>
+
+</body>
+</html>
